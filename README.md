@@ -109,23 +109,10 @@ Following variables are scaled using mix-max scaling: _BsmtFinSF2_, _LowQualFinS
 
 **Step 5:** Variables are encoded depending on their type (ordinal, categorical or numerical).
 
-## Modelling
-Random Forest, XGBoost, Gradien Boosting, SVM, CatBoost are used.
-
-## Result
-| Model | Score  |
-| :-----: | :-: |
-| SVM | 0.76555 |
-| RF | 0.74401 |
-| GB | 0.79186 |
-| Ensemble | 0.77272 |
-
-As a result, GB performed best with parameters of _n_estimators=100, max_features='sqrt'_. The why of the ensemble model performed worse than GB is due to SVM and RF were mostly failed together to predict for Survived for a sample. 
+## Modelling and Result
+Random Forest, XGBoost, Gradien Boosting, SVM, CatBoost are used. All models tuned accodingly using Grid Search. XGBoost algorithm performed better than others. 
 
 # ToDo
-In total 7-8 hours are spent on building this model, thus, it can be improved by putting additional effort. While analyzing the data, it was obvious that all data samples and features have some information, therefore, all of them must be somehow used to obtain maximum accuracy. Some of the possible improvements are:
-* Predicting the missing samples of Embarked variable
-* Tuning the hyperparameters
-* Eliminating the '.' and '/' characters from the ticket samples (I noticed it after submitting the result)
-* Using other algorithms especially I am curious about CatBoost's performance.
-
+Project requires some time to work on especially feature engineering. At every step of playing with the features, results were getting better. Thus, better result can be achieved by futher feature engineering. Some of the possible improvements are:
+* Better outlier analysis
+* Creating new features from existing ones
